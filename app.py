@@ -18,6 +18,11 @@ def hola_alguien():
     saludo = 'Hola alguien!'
     return saludo
 
+@app.route('/hola/<nombre>')
+def hola_param(nombre):
+    saludo = 'Hola ' + nombre 
+    return saludo
+
 @app.route('/json/saludo')
 def json_saludo():
     saludo = {'mensaje': 'Hola mundo!'}
