@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import json
 
 app = Flask(__name__)
 
@@ -16,6 +17,11 @@ def hola():
 def hola_alguien():
     saludo = 'Hola alguien!'
     return saludo
+
+@app.route('/json/saludo')
+def json_saludo():
+    saludo = {'mensaje': 'Hola mundo!'}
+    return json.dumps(saludo)
 
 @app.route('/hola/plantilla')
 def hola_plantilla():
