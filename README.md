@@ -19,3 +19,13 @@
 - (Opcional) Habilitar el modo de depuración para que la apliación cargue los cambios de manera automática mediante el siguiente comando (antes de ejecutar el servidor de flask):
     - (Linux/MacOS) `export FLASK_ENV=development`
     - (Windows) `set FLASK_ENV=development`
+## Reanudación de entorno de desarrollo previamente creado
+- Navegar hacia la carpeta raíz del proyecto
+- Definir las variables de entorno para definir el punto de arranque de la aplicación mediante el siguiente comando:
+    - (Linux/MacOS) `export FLASK_APP=app.py`
+    - (Windows) `set FLASK_APP=app.py`
+- Ejecutar el servidor de flask para iniciar la aplicación mediante el siguiente comando:
+    - (Cualquier SO) `flask run`
+- (Opcional) Habilitar el modo de depuración para que la apliación cargue los cambios de manera automática mediante el siguiente comando (antes de ejecutar el servidor de flask):
+    - (Linux/MacOS) `export FLASK_ENV=development`
+    - (Windows) `set FLASK_ENV=development`
