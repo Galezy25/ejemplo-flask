@@ -7,8 +7,8 @@
     <body>
         <h1>Consultar todo</h1>
         {% for elemento in consulta %}
-            <p>Título: {{ elemento['title'] }}</p>
-            <p>Descripción: {{ elemento['description'] }}</p>
+            <p>Título: {{ elemento['nombre'] }}</p>
+            <p>Correo: {{ elemento['correo'] }}</p>
         {% endfor %}
     </body>
 </html>
