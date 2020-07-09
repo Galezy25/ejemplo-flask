@@ -57,10 +57,10 @@ def consultas(titulo):
     resultado = obtener_uno(titulo)
     return render_template('consultar_uno.html', resultado=resultado)
 
-@app.route('/edicion/<titulo>')
-def edicion(titulo):
+@app.route('/edicion/<nombre>')
+def edicion(nombre):
     datos = {'description': 'New description'}
-    resultado = editar_uno(titulo, datos)
+    resultado = editar_uno(nombre, datos)
     return redirect(url_for('consultas_todo'))
 
 if __name__ == "__main__":
