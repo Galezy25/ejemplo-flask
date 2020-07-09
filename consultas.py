@@ -5,7 +5,7 @@ cliente = MongoClient('localhost', 27017)
 #coleccion = db.prueba
 db = cliente['ejemplo']
 #db = cliente.ejemplo
-coleccion = db.test
+coleccion = db.tabla1
 
 def obtener_todo():
     cursor = coleccion.find()
