@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from consultas import obtener_todo, obtener_uno, editar_uno
 import json
 
 app = Flask(__name__)
@@ -45,6 +46,22 @@ def formulario():
         return request.form['entrada']
     elif request.method == 'GET':
         return render_template('formulario.html')
+
+@app.route('/consultas/todo')
+def consultas_todo():
+    consulta = obtener_todo()
+    return render_template('consultar_todo.html', consulta=consulta)
+
+@app.route('/consultas/<titulo>')
+def consultas(titulo):
+    resultado = obtener_uno(titulo)
+    return render_template('consultar_uno.html', resultado=resultado)
+
+@app.route('/edicion/<titulo>')
+def edicion(titulo):
+    datos = {'description': 'New description'}
+    resultado = editar_uno(titulo, datos)
+    return redirect(url_for('consultas_todo'))
 
 if __name__ == "__main__":
     app.run()
