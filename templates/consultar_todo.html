@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Consultar todo</title>
+    </head>
+    <body>
+        <h1>Consultar todo</h1>
+        {% for elemento in consulta %}
+            <p>Título: {{ elemento['title'] }}</p>
+            <p>Descripción: {{ elemento['description'] }}</p>
+        {% endfor %}
+    </body>
+</html>
